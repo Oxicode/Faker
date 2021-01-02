@@ -80,6 +80,7 @@ class Company extends \Faker\Provider\Company
     public static function ruc($personaJuridica = true)
     {
         $prefix = $personaJuridica ? 20 : 10;
+
         return $prefix . static::numerify('#########');
     }
 }

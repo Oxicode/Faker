@@ -24,6 +24,7 @@ final class CompanyTest extends TestCase
 
         self::assertMatchesRegularExpression('/^([1])0\d{9}$/', $companyRUC);
     }
+
     public function testGenerateValidRucPersonaJuridica()
     {
         $companyRUC = $this->faker->ruc(true);
