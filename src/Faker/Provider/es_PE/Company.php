@@ -65,4 +65,21 @@ class Company extends \Faker\Provider\Company
 
         return implode(' ', $result);
     }
+
+    /**
+     * Generate a REG. UNICO DE CONTRIBUYENTES (RUC) number
+     *
+     * Doesn't include a checksum, as peruvians commonly use only the first
+     * 8 digits.
+     *
+     * @example '10164090581'
+     * @example '20105895410'
+     *
+     * @see http://www2.sunat.gob.pe/pdt/pdtModulos/independientes/p695/TipoDoc.htm
+     */
+    public static function ruc($personaJuridica = true)
+    {
+        $prefix = $personaJuridica ? 20 : 10;
+        return $prefix . static::numerify('#########');
+    }
 }
