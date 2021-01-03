@@ -20,16 +20,16 @@ final class CompanyTest extends TestCase
 
     public function testGenerateValidRucPersonaNatural()
     {
-        $companyRUC = $this->faker->ruc(false);
+        $companyRUC = $this->faker->ruc(true);
 
-        self::assertMatchesRegularExpression('/^([1])0\d{9}$/', $companyRUC);
+        self::assertMatchesRegularExpression('/^10\d{9}$/', $companyRUC);
     }
 
     public function testGenerateValidRucPersonaJuridica()
     {
-        $companyRUC = $this->faker->ruc(true);
+        $companyRUC = $this->faker->ruc(false);
 
-        self::assertMatchesRegularExpression('/^([2])0\d{9}$/', $companyRUC);
+        self::assertMatchesRegularExpression('/^20\d{9}$/', $companyRUC);
     }
 
     protected function getProviders(): iterable
