@@ -79,7 +79,7 @@ class Company extends \Faker\Provider\Company
      *
      * @see http://www2.sunat.gob.pe/pdt/pdtModulos/independientes/p695/TipoDoc.htm
      */
-    public static function ruc(bool $isNaturalPerson = false)
+    public static function ruc(bool $isNaturalPerson = false): string
     {
         $prefix = $isNaturalPerson ? 10 : 20;
 
